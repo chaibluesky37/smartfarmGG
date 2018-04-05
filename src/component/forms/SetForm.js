@@ -13,18 +13,24 @@ class SetForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tempset : '',
             moistset : '',
-            
-            
+            waterhr : '',
+            watermin : '',
+            datepui : '',
         };
         this.onSubmit = this.onSubmit.bind(this);
         
     }
     onSubmit(){
         Firebase.database().ref('Setting').update({
-            Temp : this.state.tempset,
             Moist : this.state.moistset,
+        });
+        Firebase.database().ref('Setting/TimeWater').update({
+            hr : this.state.waterhr,
+            min : this.state.watermin,
+        });
+        Firebase.database().ref('Setting/Timepui').update({
+            datepui : this.state.datepui,
         });
         Actions.reset("main");
     }
@@ -35,21 +41,43 @@ class SetForm extends Component {
                 <Text style={styles.title}>
                     Setting of your farm.
                 </Text>
-                
-                <TextInput
-                    style={styles.textInput}
-                    placeholder='Set Temp'
-                    onChangeText={(tempset) => this.setState({tempset})}
-                    value={this.state.tempset}
-                    // onKeyPress={this.checkPasswordReg}
-
-                />
 
                 <TextInput
                     style={styles.textInput}
                     placeholder='Set Moist'
                     onChangeText={(moistset) => this.setState({moistset})}
                     value={this.state.moistset}
+                    // onKeyPress={this.checkPasswordReg}
+
+                />
+                
+                <Text style={styles.title}>
+                    Settime to water
+                </Text>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder='Set Hour'
+                    onChangeText={(waterhr) => this.setState({waterhr})}
+                    value={this.state.waterhr}
+                    // onKeyPress={this.checkPasswordReg}
+
+                />
+                <TextInput
+                    style={styles.textInput}
+                    placeholder='Set Minute'
+                    onChangeText={(watermin) => this.setState({watermin})}
+                    value={this.state.watermin}
+                    // onKeyPress={this.checkPasswordReg}
+
+                />
+                <Text style={styles.title}>
+                    Setdate to Fertilizer
+                </Text>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder='Set Date'
+                    onChangeText={(datepui) => this.setState({datepui})}
+                    value={this.state.datepui}
                     // onKeyPress={this.checkPasswordReg}
 
                 />
