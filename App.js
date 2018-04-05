@@ -11,12 +11,12 @@ import Firebase from 'firebase';
 export default class App extends Component {
     componentWillMount() {
         Firebase.initializeApp({
-            apiKey: "AIzaSyDDO8nnwdZ5j7DvSG4l1bNW3ocd67jDQ94",
-            authDomain: "testclass-e39df.firebaseapp.com",
-            databaseURL: "https://testclass-e39df.firebaseio.com",
-            projectId: "testclass-e39df",
-            storageBucket: "testclass-e39df.appspot.com",
-            messagingSenderId: "800363021867"
+            apiKey: "AIzaSyAfYvCk7DTUrWdbV4r_51uPdzBP4DgYYGs",
+            authDomain: "pjsmrf.firebaseapp.com",
+            databaseURL: "https://pjsmrf.firebaseio.com",
+            projectId: "pjsmrf",
+            storageBucket: "pjsmrf.appspot.com",
+            messagingSenderId: "190482487459"
         })
     }
     render() {
