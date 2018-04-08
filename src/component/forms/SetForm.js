@@ -44,6 +44,7 @@ class SetForm extends Component {
 
                 <TextInput
                     style={styles.textInput}
+                    keyboardType='numeric'
                     placeholder='Set Moist'
                     onChangeText={(moistset) => this.setState({moistset})}
                     value={this.state.moistset}
@@ -56,6 +57,7 @@ class SetForm extends Component {
                 </Text>
                 <TextInput
                     style={styles.textInput}
+                    keyboardType='numeric'
                     placeholder='Set Hour'
                     onChangeText={(waterhr) => this.setState({waterhr})}
                     value={this.state.waterhr}
@@ -64,6 +66,7 @@ class SetForm extends Component {
                 />
                 <TextInput
                     style={styles.textInput}
+                    keyboardType='numeric'
                     placeholder='Set Minute'
                     onChangeText={(watermin) => this.setState({watermin})}
                     value={this.state.watermin}
@@ -75,6 +78,7 @@ class SetForm extends Component {
                 </Text>
                 <TextInput
                     style={styles.textInput}
+                    keyboardType='numeric'
                     placeholder='Set Date'
                     onChangeText={(datepui) => this.setState({datepui})}
                     value={this.state.datepui}
