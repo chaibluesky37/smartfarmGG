@@ -14,10 +14,15 @@ class SelectSMF extends Component {
         super(props);
         this.temp = Firebase.database().ref().child('Temp');
         this.moist = Firebase.database().ref().child('moist');
+        this.hr = Firebase.database().ref().child('Setting/TimeWater/hr');
+        this.min = Firebase.database().ref().child('Setting/TimeWater/min');
+        this.date = Firebase.database().ref().child('Setting/Timepui/datepui');
         this.state = {
             temp : '',
             moist : '',
-            
+            waterhr : null,
+            watermin : null,
+            datepui : null,
             
         };
         // this.checkEmailReg = this.checkEmailReg.bind(this);
@@ -32,6 +37,21 @@ class SelectSMF extends Component {
         this.moist.on('value',snap => {
             this.setState({ 
                 moist : snap.val() 
+            });
+        });
+        this.hr.on('value',snap => {
+            this.setState({ 
+                waterhr : snap.val() 
+            });
+        });
+        this.min.on('value',snap => {
+            this.setState({ 
+                watermin : snap.val() 
+            });
+        });
+        this.date.on('value',snap => {
+            this.setState({ 
+                datepui : snap.val() 
             });
         });
     }
@@ -52,6 +72,12 @@ class SelectSMF extends Component {
 
                 <Text style={styles.Text}>
                     Moist : {this.state.moist}%
+                </Text>
+                <Text style={styles.Text}>
+                    เวลารดน้ำ {this.state.waterhr} : {this.state.watermin} น.
+                </Text>
+                <Text style={styles.Text}>
+                    รดปุ๋ยทุก {this.state.datepui} วัน
                 </Text>
                 <TouchableOpacity
                     style={styles.button}
