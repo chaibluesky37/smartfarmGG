@@ -23,14 +23,14 @@ class SetForm extends Component {
     }
     onSubmit(){
         Firebase.database().ref('Setting').update({
-            Moist : this.state.moistset,
+            Moist : this.state.moistset*1,
         });
         Firebase.database().ref('Setting/TimeWater').update({
-            hr : this.state.waterhr,
-            min : this.state.watermin,
+            hr : this.state.waterhr*1,
+            min : this.state.watermin*1,
         });
         Firebase.database().ref('Setting/Timepui').update({
-            datepui : this.state.datepui,
+            datepui : this.state.datepui*1,
         });
         Actions.reset("main");
     }
