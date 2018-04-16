@@ -1,5 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "26.0.0"
+    "name": "Smart Farm",
+    "icon": "./src/img/logo.png",
+    "version": "1.0.0",
+    "slug": "Smart-Farmgg-slug",
+    "sdkVersion": "26.0.0",
+    "ios": {
+      "bundleIdentifier": "gg.farmgg.smartfarm"
+    },
+    "android": {
+      "package": "gg.farmgg.smartfarm"
+    }
   }
 }
